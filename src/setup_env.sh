@@ -10,9 +10,9 @@ export PYTHONBIN="python"
 #export LD_LIBRARY_PATH=/anotherpath:LD_LIBRARY_PATH
 
 # Basic Theano flags
-MERLIN_THEANO_FLAGS="cuda.root=/usr/local/8.0,floatX=float32,on_unused_input=ignore"
+MERLIN_THEANO_FLAGS="cuda.root=/usr/local/10.1,floatX=float32,device=cuda,on_unused_input=ignore"
 export MERLIN_THEANO_FLAGS
-	
+
 
 # Log the resulting setup =====================================================
 
@@ -39,5 +39,3 @@ echo MERLIN_THEANO_FLAGS:
 echo "$MERLIN_THEANO_FLAGS" |tr , '\n' |sed '/^$/d' |sed 's/^/    /'
 
 echo " "
-
-
