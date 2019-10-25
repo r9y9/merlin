@@ -175,7 +175,7 @@ class IndividualDistortionComp(object):
                 gen_frame_number = min(ref_frame_number, gen_frame_number)
                 ref_data = ref_data[0:ref_frame_number, ]
                 gen_data = gen_data[0:gen_frame_number, ]
-            
+
             if ref_frame_number != gen_frame_number:
                 self.logger.critical("The number of frames is not the same: %d vs %d (%s). Error in compute_distortion.py\n." %(ref_frame_number, gen_frame_number, file_id))
                 raise
@@ -254,7 +254,11 @@ class IndividualDistortionComp(object):
         return f0_corr
 
     def compute_corr(self, ref_data, gen_data):
-        corr_coef = pearsonr(ref_data, gen_data)
+        try:
+            corr_coef = pearsonr(ref_data, gen_data)
+        except TypeError as e:
+            print(e)
+            return 0.0
 
         return corr_coef[0]
 
