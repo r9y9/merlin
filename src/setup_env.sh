@@ -10,7 +10,7 @@ export PYTHONBIN="python"
 #export LD_LIBRARY_PATH=/anotherpath:LD_LIBRARY_PATH
 
 # Basic Theano flags
-MERLIN_THEANO_FLAGS="cuda.root=/usr/local/10.1,floatX=float32,device=cuda,on_unused_input=ignore"
+MERLIN_THEANO_FLAGS="cuda.root=/usr/local/cuda,floatX=float32,on_unused_input=ignore"
 export MERLIN_THEANO_FLAGS
 
 
